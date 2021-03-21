@@ -30,8 +30,8 @@ const seedBooks = [
     }
 ];
 
-db.Book.remove({})
-  .then(() => db.Book.collection.insertMany(seedBooks))
+db.remove({})
+  .then(() => db.collection.insertMany(seedBooks))
   .then(data => {
       console.log(data + "inserted");
       process.exit(0);
