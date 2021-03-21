@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to Mongo
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactbook-search");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactbooksearch");
 
 // Start server
 app.listen(PORT, function(){
