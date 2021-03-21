@@ -3,6 +3,6 @@ const bookAPI = require("./book.js");
 
 
 // API routes
-router.use("/api", bookAPI);
+router.use("/books", bookAPI);
 
 module.exports = router;

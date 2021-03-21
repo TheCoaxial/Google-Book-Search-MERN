@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const bookController = require("../controllers/bookController");
-const postController = require("../controllers/bookController");
 
 // /api/books
 router
