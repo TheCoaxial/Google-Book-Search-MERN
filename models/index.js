@@ -1,7 +1,5 @@
 const Book = require("./book");
 
-Book = require("./book");
-
 module.exports = Book;
 
 // Other than being able to just require the folder /models instead of /models/book.js,
