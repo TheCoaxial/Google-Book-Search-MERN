@@ -22,6 +22,13 @@ const reducer = (state, action) => {
                 })
             };
 
+        case "UPDATE_BOOK":
+            return{
+                ...state,
+                books: [...state.books],
+                loading: false
+            };
+
         case "LOADING":
             return {
                 ...state,

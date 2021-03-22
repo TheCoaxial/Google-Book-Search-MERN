@@ -24,3 +24,5 @@ function BookResults(props) {
         <ul className="lItem"> {books} </ul>
     )
 }
+
+export default BookResults;
