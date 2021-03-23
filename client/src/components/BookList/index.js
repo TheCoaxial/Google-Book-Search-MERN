@@ -34,7 +34,7 @@ function BookList() {
                 dispatch({type: "LOADING"});
                 dispatch({type: "ADD_BOOK", payload: response.data});
                 
-                // console.log(response );
+                 console.log(response );
             })
     }, []);
     
@@ -43,14 +43,21 @@ function BookList() {
     return (
         <div>
             <h1>Saved Books</h1>
-            <h3>Click the X to remove a book</h3>
+            <h4>Click the X to remove a book</h4>
+            <br></br>
+            <div>
             {state.saved[0] ? (
                 <BookResults>
                     {state.saved[0].map(book => (
-                    // console.log("Hi", book.title )
+                     
                         <strong>
-                        {book.title}
-                        {<DelBtn onClick={() => removeBook(book._id)} />}
+                            {console.log("Hi", book )}
+                        {book.title} 
+                        <br></br>
+                        <img src={book.image}></img>
+                        {<DelBtn onClick={() => removeBook(book._id)} />}  
+                        <br></br>
+                        <br></br>
                         </strong>
                     ))}
                     
@@ -58,6 +65,7 @@ function BookList() {
             ) : (
                 <h3>You haven't added any books yet!</h3>
             )}
+            </div>
             
             
         </div>

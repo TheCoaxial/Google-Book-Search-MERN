@@ -34,7 +34,7 @@ function CreateBookSearch() {
     // titleRef.current.value = document.getElementById('search').value;;
     API.search(title)
       .then(result => {
-        //   console.log(result.data.items);
+           console.log(result.data.items);
           setBookData(result.data.items);
           
 
@@ -49,26 +49,34 @@ function CreateBookSearch() {
   return (
     <div>
       <h1>Search for a book!</h1>
-      <form className="form-group mt-5 mb-5" onSubmit={handleSubmit}>
-        <input className="form-control mb-5"  id="search"  placeholder="Title" />
+      <form className="form-group mt-8 mb-8" onSubmit={handleSubmit}>
+        <input className="form-control mb-8"  id="search"  placeholder="Title" />
         <button className="btn btn-success mt-3 mb-5"  type="submit">
           Search 
         </button>
       </form>
       <div>
-            <h1>Book Search</h1>
+            
             <h3>Click the + to add a book to your Saved List</h3>
             {books[0] ? (
                 <ResultListSearch>
                     {/* {console.log("Hi", books )} */}
                     {books.map(books => (
                     //  <Link to = {searchLink}>
+                        <div>
                         <strong>
-                        {<AddButton onClick={() => addBook(books.volumeInfo)} />}
-                        {books.volumeInfo.title} <br></br>
-                        
-                        {console.log(books.id)}
+                        {<AddButton onClick={() =>  API.saveBook(books.volumeInfo)} />}
+                        {books.volumeInfo.title} 
+                        <br></br>
+                        <a href={books.volumeInfo.infoLink}>
+                        <img src={books.volumeInfo.imageLinks.smallThumbnail}></img>
+                        </a>
+                        <br></br>
+                        <br></br>
+                        {console.log(books.volumeInfo)}
                         </strong>
+                        </div>
+                        
                     // </Link>
                     ))}
 

@@ -1,36 +1,18 @@
-import React, { useEffect } from "react";
-// import BookResults from "../components/ResultList";
-// import DelBtn from "../components/DeleteButton";
-// import { link } from "react-router-dom";
-// import { useStoreContext } from "../utils/GlobalState";
+import React from "react";
+import { Col, Row, Container } from "../components/Grid";
+import BookList from "../components/BookList";
 
-// const SavedList = () => {
-//     const [state, dispatch] = useStoreContext();
 
-//     const removeSaved = (id) => {
-//         dispatch({
-//             type: "REMOVE_BOOK",
-//             _id: id
-//         });
-//     };
+const Saved = () => {
+  return (
+    <Container fluid>
+      <Row>
+        <Col size="md-6">
+          <BookList />
+        </Col>
+      </Row>
+    </Container>
+  );
+};
 
-//     const getSaved = () => {
-//         dispatch({ type: "UPDATE_BOOK" });
-//     };
-
-//     useEffect(() => {
-//         getSaved();
-//     }, []);
-
-//     return (
-//         <div className="container ">
-//             <h1>Here are all of your saved books</h1>
-//             {state.books.length ? (
-//                 <BookResults>
-
-//                 </BookResults>
-//             )}
-//         </div>
-//     )
-
-// }
+export default Saved;
