@@ -3,7 +3,8 @@ import React from "react";
 
 function DeleteBtn(props) {
     return (
-      <span className="delete-btn" {...props} role="button" tabIndex="0">
+      <span className="btn" {...props} role="button" 
+       style={{color: "green", size: "large"}}>
         +
       </span>
     );

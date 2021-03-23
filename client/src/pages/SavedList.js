@@ -7,7 +7,7 @@ const Saved = () => {
   return (
     <Container fluid>
       <Row>
-        <Col size="md-6">
+        <Col size="md-8">
           <BookList />
         </Col>
       </Row>

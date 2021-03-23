@@ -4,6 +4,7 @@ import ResultListSearch from "../ResultListSearch";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import AddButton from "../AddButton";
+import {Row, Col, Container } from "../Grid";
 
 function CreateBookSearch() {
   
@@ -16,7 +17,13 @@ function CreateBookSearch() {
     .then(() =>{
         dispatch({
             type: "ADD_BOOK",
-            _id: id
+            _id: id,
+            title: books.volumeInfo.title ,
+            author: books.volumeInfo.author ,
+            description: books.volumeInfo.description ,
+            image: books.volumeInfo.imageLinks.smallThumbnail ,
+            link: books.volumeInfo.infoLink 
+
         });
 
     })
@@ -49,43 +56,37 @@ function CreateBookSearch() {
   return (
     <div>
       <h1>Search for a book!</h1>
-      <form className="form-group mt-8 mb-8" onSubmit={handleSubmit}>
-        <input className="form-control mb-8"  id="search"  placeholder="Title" />
-        <button className="btn btn-success mt-3 mb-5"  type="submit">
+      <form className="form-group mt-4 mb-4" onSubmit={handleSubmit}>
+        
+        <button className="btn btn-success mt-3 mb-4"  type="submit">
           Search 
         </button>
+        <input className="form-control mb-6"  id="search"  placeholder="Title" />
       </form>
-      <div>
-            
-            <h3>Click the + to add a book to your Saved List</h3>
-            {books[0] ? (
-                <ResultListSearch>
-                    {/* {console.log("Hi", books )} */}
-                    {books.map(books => (
-                    //  <Link to = {searchLink}>
-                        <div>
+      <div>  
+        <h3 style={{textAlign:"center"}}>Click the + to add a book to your Saved List</h3>
+        {books[0] ? (
+            <ResultListSearch>
+                {/* {console.log("Hi", books )} */}
+                {books.map(books => (
+                    <div>
                         <strong>
-                        {<AddButton onClick={() =>  API.saveBook(books.volumeInfo)} />}
-                        {books.volumeInfo.title} 
-                        <br></br>
-                        <a href={books.volumeInfo.infoLink}>
-                        <img src={books.volumeInfo.imageLinks.smallThumbnail}></img>
-                        </a>
-                        <br></br>
-                        <br></br>
-                        {console.log(books.volumeInfo)}
+                            {<AddButton onClick={() =>  API.saveBook(books.id)} />}
+                            {books.volumeInfo.title} 
+                            <br></br>
+                            <a href={books.volumeInfo.infoLink}>
+                            <img  src={books.volumeInfo.imageLinks.smallThumbnail}></img>
+                            </a>
+                            <br></br>
+                            <br></br>
+                            {console.log(books.id)}
                         </strong>
-                        </div>
-                        
-                    // </Link>
-                    ))}
-
-                </ResultListSearch>
-            ) : (
-                <h3>Enter A title to search!</h3>
-            )}
-
-
+                    </div>               
+                ))}
+            </ResultListSearch>
+        ) : (
+            <h3 style={{textAlign:"center"}}>Enter A title to search!</h3>
+        )}
         </div>
     </div>
     
