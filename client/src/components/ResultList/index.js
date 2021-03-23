@@ -1,28 +1,52 @@
 import React from  "react";
 
 
-function BookResults(props) {
+function BookResults({ children }) {
 
-
-    const books = props.books.map((book) => 
     
-    [
-        <li>
-            <div className="float-container">
-                <div className="float-child"><p>{book.items.volumeInfo.title}</p></div>
-                <div className="float-child"><p>{book.items.volumeInfo.authors[0]}</p></div>
-                <div className="float-child"><p>{book.items.volumeInfo.description}</p></div>
-                <div className="float-child"><p>{book.items.volumeInfo.imageLinks.smallThumbnail}</p></div>
-                <div className="float-child"><p>{book.items.volumeInfo.infoLinks}</p></div>
-            </div>
-        </li>
-    ]
+    // const books = children.books.map((book) => 
+    // console.log("Made it here" +books)
+    // [
+    //     <li>
+    //         <div className="float-container">
+    //             <div className="float-child"><p>{book.items.volumeInfo.title}</p></div>
+    //             <div className="float-child"><p>{book.items.volumeInfo.authors[0]}</p></div>
+    //             <div className="float-child"><p>{book.items.volumeInfo.description}</p></div>
+    //             <div className="float-child"><p>{book.items.volumeInfo.imageLinks.smallThumbnail}</p></div>
+    //             <div className="float-child"><p>{book.items.volumeInfo.infoLinks}</p></div>
+    //         </div>
+    //     </li>
+        
+    // ]
+    <li>
+        <div className="float-container">
+            <div className="float-child"><p>{children}</p></div>
+            {console.log(children)}
+        </div>
+    </li>
 
-    );
+    // );
 
     return(
-        <ul className="lItem"> {books} </ul>
+        <ul className="lItem"> {children} </ul>
     )
 }
 
 export default BookResults;
+
+// import React from "react";
+
+
+// // This file exports both the List and ListItem components
+
+// export function List({ children }) {
+//   return (
+//     <div className="list-overflow-container">
+//       <ul className="list-group">{children}</ul>
+//     </div>
+//   );
+// }
+
+// export function ListItem({ children }) {
+//   return <li className="list-group-item">{children}</li>;
+// }

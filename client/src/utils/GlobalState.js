@@ -10,7 +10,13 @@ const reducer = (state, action) => {
         case "ADD_BOOK":
             return {
                 ...state,
-                books: [action.post, ...state.books],
+                saved: [action.payload],
+                loading: false
+            };
+        case "FIND_BOOK":
+            return {
+                ...state,
+                books: [action.payload],
                 loading: false
             };
         
@@ -18,7 +24,8 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 books: state.books.filter((book) => {
-                    return book._id !== action._id;
+                    // return book._id !== action._id;
+                    return state
                 })
             };
 
