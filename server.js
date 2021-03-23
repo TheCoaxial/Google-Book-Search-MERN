@@ -20,6 +20,10 @@ app.use(routes);
 // Connect to Mongo
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactbooksearch");
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
+
 // Start server
 app.listen(PORT, function(){
     console.log('API server now listening on PORT ' + PORT);

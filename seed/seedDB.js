@@ -15,7 +15,7 @@ const seedBooks = [
         In the wilds of the forest, she forms an unexpected alliance with the mysterious goblins, and together they resolve to fight back against the humans and the cruel Decree of Bright Magic.
         But as Makenna grows more successful and her goblin army becomes stronger, her existence threatens the ruling Hierarchy's plans for the country. She evades every trap they set, until a young knight named Tobin comes to the Goblin Wood hoping to regain his lost honour. 
         And each of them finds something else instead...`,
-        image: "",
+        image: "http://books.google.com/books/content?id=A1k12_rn88AC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
         link: ""
     },
     {
@@ -25,7 +25,7 @@ const seedBooks = [
         Sent to a boarding school in Ancelstierre as a young child, Sabriel has had little experience with the random power of Free Magic or the Dead who refuse to stay dead in the Old Kingdom. 
         But during her final semester, her father, the Abhorsen, goes missing, and Sabriel knows she must enter the Old Kingdom to find him.
         She soon finds companions in Mogget, a cat whose aloof manner barely conceals its malevolent spirit, and Touchstone, a young Charter Mage long imprisoned by magic, now free in body`,
-        image: "",
+        image: "http://books.google.com/books/content?id=Gcp9fCKSGLsC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
         link: ""
     }
 ];
