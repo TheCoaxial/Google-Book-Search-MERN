@@ -3,15 +3,23 @@
   
 
 ## To DO
-  -Fix post request so that books can actually be saved to the users list
-  -update CSS
+  1. Fix post request so that books can actually be saved to the users list
+  2. update CSS
+  3. fix saved page not rerendering when a user deletes a book.
+
+## For the Grader(Temp section)
+<ol>
+  <li>The post request issue seems to be related to the format of the data that I'm trying to send, so maybe finding a better way to parse the data would fix that.</li>
+  <li>The CSS just needs some more time and attention.</li>
+  <li>The saved page issue might be fixed if I can add a way to trigger on button press, specifically when the user presses delete, re-render the page.</li>
+ </ol>
 
 ## Author
 
 Cory M Scanlon
 
 ## Example Gif
-![Gid](Demo.BookSearch.gif)
+![Gif](Demo.BookSearch.gif)
 
 # License
 
