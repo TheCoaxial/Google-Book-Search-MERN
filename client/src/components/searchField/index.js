@@ -4,13 +4,15 @@ import ResultListSearch from "../ResultListSearch";
 import API from "../../utils/API";
 // import { Link } from "react-router-dom";
 import AddButton from "../AddButton";
-// import {Row, Col, Container } from "../Grid";
+import Image from "../Img";
 
 function CreateBookSearch() {
   
   const [books, setBookData] = useState([]);
   const [saved, dispatch] = useStoreContext();
   var searchLink=""
+//   var bookImage = ""
+  
 
   const addBook = id => {
     API.saveBook(id)
@@ -75,7 +77,7 @@ function CreateBookSearch() {
                             {books.volumeInfo.title} 
                             <br></br>
                             <a href={books.volumeInfo.infoLink}>
-                            <img  src={books.volumeInfo.imageLinks.smallThumbnail}></img>
+                            <img  src={books.volumeInfo.imageLinks.smallThumbnail}></img> 
                             </a>
                             <br></br>
                             <br></br>
