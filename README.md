@@ -6,12 +6,14 @@
   1. Fix post request so that books can actually be saved to the users list
   2. update CSS
   3. fix saved page not rerendering when a user deletes a book.
+  4. fix page crash when returning unexpected results ( in this case a book not having a thumbnail)
 
 ## For the Grader(Temp section)
 <ol>
   <li>The post request issue seems to be related to the format of the data that I'm trying to send, so maybe finding a better way to parse the data would fix that.</li>
   <li>The CSS just needs some more time and attention.</li>
   <li>The saved page issue might be fixed if I can add a way to trigger on button press, specifically when the user presses delete, re-render the page.</li>
+  <li> I think I could do that by adding some logic that renders the <img> tag the way it is if the property exists or renders a stock image if it doesnt</li>
  </ol>
 
 ## Author
